@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for GTM · Arthur Froissart</title>
+  <meta name="description" content="My notes on how AI works, in plain words, for non-technical people in go-to-market.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI for GTM · Arthur Froissart">
+  <meta property="og:description" content="My notes on how AI works, in plain words, for non-technical people in go-to-market.">
+  <meta property="og:image" content="https://arthurmf01.github.io/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23181818'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="gtm.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <img src="assets/illustrations/avatar.jpg" alt="">
+        Arthur Froissart
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="career.html">Career</a></li>
+          <li><a class="site-nav__link" href="my-next-step.html">My next step</a></li>
+          <li><a class="site-nav__link is-active" href="ai-for-gtm.html" aria-current="page">AI for GTM</a></li>
+          <li><a class="site-nav__link" href="outside.html">Hobbies</a></li>
+          <li><a class="site-nav__link" href="faq.html">FAQ</a></li>
+          <li><a class="btn btn--secondary btn--sm site-nav__cta" href="mailto:arthurmf.amf@gmail.com">Say hello</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="gtm">
+    <section class="section gtm-hero">
+      <div class="container">
+        <span class="eyebrow">AI for GTM · in plain words</span>
+        <h1 class="page-title">How current AI systems work: notes for go-to-market readers</h1>
+        <p class="career-intro__lede reveal">These notes set out what I have learned about how current AI systems work. They are written for non-technical readers in go-to-market roles and draw on the technical literature and on my own experience. The aim is to open a discussion, not to settle one.</p>
+        <div class="hero__cta-row">
+          <a href="#models" class="btn btn--primary">Start with the first idea <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="gtm-kicker reveal">The map</p>
+        <h2 class="gtm-h2 reveal">Three ideas that helped me most.</h2>
+        <div class="gtm-cards">
+          <a class="gtm-card reveal" href="#models" style="--tint: var(--tint-blue)"><span class="gtm-card__n">01</span><span class="gtm-card__t">Three kinds of model</span><span class="gtm-card__d">Estimating a quantity, assigning a category and generating content are distinct tasks. Generative AI is only the third.</span></a>
+          <a class="gtm-card reveal" href="#networks" style="--tint: var(--tint-peach); --d: 0.1s"><span class="gtm-card__n">02</span><span class="gtm-card__t">Neural networks</span><span class="gtm-card__d">The architecture behind generative AI: a very large set of adjustable weights, fitted to examples.</span></a>
+          <a class="gtm-card reveal" href="#language" style="--tint: var(--tint-green); --d: 0.2s"><span class="gtm-card__n">03</span><span class="gtm-card__t">Language as numbers</span><span class="gtm-card__d">Text is converted to numbers before a model can process it. That step shapes both capability and cost.</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="models">
+      <div class="container gtm-art">
+        <header class="gtm-art__head">
+          <p class="gtm-kicker reveal">Idea 1 · 3 minute read</p>
+          <h2 class="gtm-h2 reveal">Three kinds of model, and generative AI is only one of them.</h2>
+          <p class="gtm-take reveal">A model estimates a quantity, assigns a category or generates new content. Each answers a different question and fails in a different way.</p>
+        </header>
+        <div class="gtm-demo reveal">
+          <div class="gtm-toggle" role="tablist" aria-label="Kind of model" data-models>
+            <button type="button" role="tab" aria-selected="true" data-model="num">Regression</button>
+            <button type="button" role="tab" aria-selected="false" data-model="sort">Classification</button>
+            <button type="button" role="tab" aria-selected="false" data-model="gen">Generative</button>
+          </div>
+          <label class="gtm-slider"><span>Meetings held with the buyer: <strong data-meet-out>6</strong></span><input type="range" min="1" max="12" value="6" data-meet></label>
+          <svg class="gtm-chart" viewBox="0 0 320 200" role="img" aria-label="Chart of meetings held against deal outcome" data-chart></svg>
+          <p class="gtm-answer" data-model-answer aria-live="polite"></p>
+          <p class="gtm-p gtm-note" data-model-note aria-live="polite"></p>
+        </div>
+        <div class="gtm-art__body">
+          <p>Public discussion tends to treat "AI" and generative AI as one thing. The distinction matters commercially, because the three main kinds of model answer different questions and fail in different ways. I held the same confusion until this year, despite a master's in computer science and six years selling software. A classmate with a research background in language models corrected it in one sentence: a model does one of three jobs.</p>
+          <h3><span>1</span> Regression: estimating a quantity</h3>
+          <p>A regression model estimates a quantity from past observations. Sales forecasting is the familiar case: commit, best case and pipeline coverage are inputs to an estimate that sellers already produce by hand.</p>
+          <p>An exercise from my statistics course at INSEAD illustrates the limits of intuition. In a model predicting body weight, shoe size alone accounted for 59% of the variance, more than height. A model reports the pattern present in the data, which is not always the one the analyst expected.</p>
+          <h3><span>2</span> Classification: assigning a category</h3>
+          <p>A classification model assigns each case to one of a fixed set of categories: renew or churn, which team receives a lead.</p>
+          <p><strong>Headline accuracy is a poor guide to its value.</strong> Where few customers leave, a model that predicts no departures is accurate in most cases and useless in practice. The relevant measure is the share of actual leavers it identifies.</p>
+          <h3><span>3</span> Generation: classification repeated</h3>
+          <p>A generative language model is trained to predict the next token in a sequence. At each step it produces a probability distribution over its vocabulary, one token is drawn, and the process repeats. Structurally, this is classification applied in a loop (Stanford STATS 60, lecture 27).</p>
+          <p>Two consequences follow. Output varies between runs, because it is sampled, not retrieved. And fluency is not evidence of accuracy.</p>
+          <blockquote class="gtm-pull">The useful question to a vendor is which of the three the product performs.</blockquote>
+          <p><strong>In practice the three are combined.</strong> My own product, Ambidex, uses a generative model for a classification task: it reads a voice note and assigns a level of urgency. The reverse substitution deserves more caution. A numerical forecast produced by a language model should be checked against a model built to estimate numbers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gtm-band" id="networks">
+      <div class="container gtm-art">
+        <header class="gtm-art__head">
+          <p class="gtm-kicker reveal">Idea 2 · 3 minute read</p>
+          <h2 class="gtm-h2 reveal">Neural networks: performance, cost and limited explanation.</h2>
+          <p class="gtm-take reveal">The architecture behind generative AI predicts well, costs in proportion to its size, and cannot yet account for its own outputs.</p>
+        </header>
+        <div class="gtm-demo reveal">
+          <svg class="gtm-chart" viewBox="0 0 320 220" role="img" aria-label="Diagram of a small neural network" data-net></svg>
+          <label class="gtm-slider"><span>Layers: <strong data-layers-out>3</strong></span><input type="range" min="1" max="6" value="3" data-layers></label>
+          <label class="gtm-slider"><span>Neurons per layer: <strong data-width-out>4</strong></span><input type="range" min="2" max="8" value="4" data-width></label>
+          <p class="gtm-answer"><strong data-params>0</strong> parameters in this network. <span data-params-scale></span></p>
+        </div>
+        <div class="gtm-art__body">
+          <p>Neural networks underlie generative AI and much of modern prediction, although many business forecasting and scoring models still rely on simpler methods such as decision trees. The commercial properties of a neural network follow directly from how it is built: high predictive performance, high running cost and limited explainability.</p>
+          <h3><span>1</span> Prediction against explanation</h3>
+          <p>My statistics course set two models against the same problem. The regression was interpretable: each coefficient stated how much a factor added or removed. The neural network predicted more accurately and offered no such account. Where a decision has to be justified, the less accurate model is often the better choice.</p>
+          <h3><span>2</span> Units, parameters and training</h3>
+          <p>A network is made of simple units arranged in layers. Each unit sums its inputs and passes on a number. The connections between units carry weights, the parameters, which determine how strongly one unit influences another.</p>
+          <p>A deep network can be described as a much more complicated version of linear regression (Stanford STATS 60). No formula yields the best set of weights directly. Training adjusts them incrementally, over a very large number of examples.</p>
+          <h3><span>3</span> Cost scales with parameters</h3>
+          <p>Parameters are the connections, not the units. Each unit connects to many others, so parameters far outnumber units. GPT-3, released in 2020, had about 175 billion.</p>
+          <p>Kaplan et al. (2020) estimate the cost of processing one token at about twice the parameter count in basic operations. A model with five billion parameters therefore performs roughly ten billion per token, and cost rises broadly in proportion to model size and to the volume of text processed.</p>
+          <blockquote class="gtm-pull">For most deployments, running the model is the recurring cost.</blockquote>
+          <h3><span>4</span> Why explanation remains limited</h3>
+          <p>Individual units often respond to several unrelated concepts, and a single concept is distributed across many units (Elhage et al., 2022; Bereska and Gavves, 2024). There is no rule to extract and hand to a customer.</p>
+          <p>Interpretability research is advancing, but it remains research. A claim of "explainable AI" in commercial material warrants a specific question about what, exactly, is explained.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="language">
+      <div class="container gtm-art">
+        <header class="gtm-art__head">
+          <p class="gtm-kicker reveal">Idea 3 · 3 minute read</p>
+          <h2 class="gtm-h2 reveal">From language to numbers: tokens and embeddings.</h2>
+          <p class="gtm-take reveal">A model processes tokens, not words. The token is both the technical unit and the commercial one.</p>
+        </header>
+        <div class="gtm-demo reveal">
+          <label class="gtm-field"><span class="gtm-slider">Type a sentence and watch it get cut</span><input type="text" value="Can you send the renewal quote by Friday?" maxlength="80" data-text></label>
+          <ul class="gtm-tokens" data-tokens aria-live="polite"></ul>
+          <p class="gtm-answer"><strong data-token-count>0</strong> tokens.</p>
+          <p class="gtm-p gtm-note">A simplified cutter with made-up numbers: real ones are learned from data and split words differently.</p>
+          <svg class="gtm-chart gtm-chart--map" viewBox="0 0 320 150" role="img" aria-label="Map where invoice, bill and payment sit together, and kick-off, striker and goal sit together">
+            <g class="gtm-map-a"><circle cx="70" cy="50" r="5"/><text x="80" y="54">invoice</text><circle cx="95" cy="82" r="5"/><text x="105" y="86">bill</text><circle cx="52" cy="100" r="5"/><text x="62" y="104">payment</text></g>
+            <g class="gtm-map-b"><circle cx="230" cy="40" r="5"/><text x="240" y="44">striker</text><circle cx="250" cy="78" r="5"/><text x="260" y="82">goal</text><circle cx="212" cy="110" r="5"/><text x="222" y="114">kick-off</text></g>
+          </svg>
+          <p class="gtm-p gtm-note">The map of meaning: words used in similar ways sit close together.</p>
+        </div>
+        <div class="gtm-art__body">
+          <blockquote class="gtm-pull">I met tokens as a bill before I met them as a concept.</blockquote>
+          <p>In extended working sessions with Claude, my usage rose faster than I could account for. The explanation is mechanical. At each turn the whole conversation is sent to the model again, and usage is measured in tokens. Providers cache repeated context at a reduced price, but usage still grows with the length of the history.</p>
+          <h3><span>1</span> Tokenisation: text as a sequence of units</h3>
+          <p>A language model does not process letters or words. Text is divided into tokens drawn from a fixed vocabulary, typically a short word or a fragment of a longer one, and each token is replaced by an integer.</p>
+          <p>Vocabularies differ between providers, so the same document yields different token counts on different models. Since pricing is per token, this is the unit that appears on the invoice.</p>
+          <h3><span>2</span> Embeddings: position as meaning</h3>
+          <p>An integer carries no meaning. Each token is therefore mapped to a vector, a position in a space with many dimensions, in which tokens used in similar contexts lie close together. "Invoice" sits near "bill" and far from "striker".</p>
+          <p>The same principle is applied to whole passages, using a separate embedding model. Each passage receives a position, which allows retrieval by meaning when wording differs. Most products that answer questions over a company's documents work this way: the passages nearest the question are retrieved and supplied to the language model.</p>
+          <h3><span>3</span> Implications for deployment</h3>
+          <p><strong>Instructions in language constrain a probabilistic system only loosely.</strong> In an INSEAD workshop, chatbots instructed never to disclose a secret word were induced to do so within minutes.</p>
+          <p><strong>Context is a cost.</strong> Long histories and long documents are converted to tokens at every turn. Reducing what is sent is usually the cheapest efficiency gain available.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gtm-band">
+      <div class="container gtm-narrow">
+        <h2 class="gtm-h2 reveal">More articles soon.</h2>
+        <p class="gtm-p reveal">Corrections and alternative explanations are welcome.</p>
+        <p class="gtm-p gtm-note reveal">Sources: <a href="https://arxiv.org/abs/2001.08361">Kaplan et al. (2020), Scaling Laws for Neural Language Models</a>; <a href="https://arxiv.org/abs/2209.10652">Elhage et al. (2022), Toy Models of Superposition</a>; <a href="https://arxiv.org/abs/2404.14082">Bereska and Gavves (2024), Mechanistic Interpretability for AI Safety: A Review</a>; <a href="https://web.stanford.edu/class/archive/stats/stats60/stats60.1266/lectures/27-lecture-textgen.html">Stanford STATS 60, lecture 27</a>.</p>
+        <div class="hero__cta-row">
+          <a href="mailto:arthurmf.amf@gmail.com" class="btn btn--primary">Tell me what you think</a>
+          <a href="career.html" class="link-secondary">Read the story</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="text-muted">&copy; 2026 Arthur Froissart</span>
+      <nav class="cluster" aria-label="Contact">
+        <a href="mailto:arthurmf.amf@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/arthurmf/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="gtm.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+node_modules/
+
+# Planning/continuity docs: must never reach origin/main (this repo's root is
+# the public GitHub Pages web root AND the repo itself is public, so being
+# merely unserved by Jekyll is not enough — see .project/DECISIONS.md,
+# 06/10/2026 entry). Squash-merge build branches into main at deploy time so
+# this directory's history never touches a pushed branch either.
+.project/
+
+# Working rules for Claude sessions in this repo. Kept local for the same
+# reason as .project/: the repo root is the public web root.
+CLAUDE.md
