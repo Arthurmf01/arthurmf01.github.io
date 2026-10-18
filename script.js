@@ -889,7 +889,7 @@
 
   // Analytics with consent: Google Analytics loads only after the visitor accepts.
   // Paste the GA4 measurement ID ("G-...") below; while it is empty, no banner shows and nothing loads.
-  var GA_ID = "";
+  var GA_ID = "G-3HG3MGDP0T";
   var CONSENT_KEY = "af-cookie-consent";
 
   function readConsent() {
