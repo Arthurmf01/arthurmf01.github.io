@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ambidex · Arthur Froissart</title>
+  <meta name="description" content="Ambidex: speak a thought, it becomes a task, and an agent drafts the follow-up for approval.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ambidex · Arthur Froissart">
+  <meta property="og:description" content="Ambidex: speak a thought, it becomes a task, and an agent drafts the follow-up for approval.">
+  <meta property="og:image" content="https://arthurmf.com/assets/og-card.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23181818'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='30' fill='%23fff' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="site-header__brand" href="index.html">
+        <img src="assets/illustrations/avatar.jpg" alt="">
+        Arthur Froissart
+      </a>
+
+      <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle__bar"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" data-site-nav aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a class="site-nav__link" href="index.html">Home</a></li>
+          <li><a class="site-nav__link" href="career.html">Career</a></li>
+          <li><a class="site-nav__link" href="my-next-step.html">My next step</a></li>
+          <li><a class="site-nav__link" href="ai-for-gtm.html">AI for GTM</a></li>
+          <li><a class="site-nav__link is-active" href="builds.html" aria-current="page">AI builds</a></li>
+          <li><a class="site-nav__link" href="outside.html">Hobbies</a></li>
+          <li><a class="site-nav__link" href="faq.html">FAQ</a></li>
+          <li><a class="btn btn--secondary btn--sm site-nav__cta" href="mailto:arthurmf.amf@gmail.com">Say hello</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section">
+      <div class="container stack stack--lg">
+        <a class="build-back" href="builds.html">← All builds</a>
+        <div class="prose">
+          <span class="eyebrow">Build · running daily since August 2026</span>
+          <h1 class="page-title">Ambidex</h1>
+          <p class="hero__lede">Speak a thought into my phone. It lands as a task in my notes, and an agent drafts the next step for me to approve.</p>
+        </div>
+        <dl class="build-fields">
+          <div><dt>Stack</dt><dd>Cloudflare Workers · Whisper (Groq, Workers AI fallback) · GitHub API · headless AI coding agent · Telegram</dd></div>
+          <div><dt>Runs</dt><dd>Every capture; the agent checks for new work every two minutes</dd></div>
+          <div><dt>Code</dt><dd><a href="https://github.com/Arthurmf01/ambidex" target="_blank" rel="noopener">github.com/Arthurmf01/ambidex</a> (architecture and design notes; the live code stays private)</dd></div>
+        </dl>
+        <div class="prose build-prose">
+          <h2>Why it exists</h2>
+          <p>I had ideas and to-dos all day, between classes and on the move, and lost most of them. Typing on a phone is slow, and a note app only stores things; it does not do the next step. I wanted one button: speak, and the follow-up starts without me.</p>
+          <h2>How it works</h2>
+          <ol class="build-steps">
+            <li>On the phone, a web app with one large button. I tap and speak.</li>
+            <li>The audio goes to a Cloudflare Worker and is transcribed by Whisper in a second or two. I check the text, then save.</li>
+            <li>The task is written into my Obsidian notes on GitHub, the single source of truth.</li>
+            <li>If I tag it for the AI, an agent on my Mac picks it up, runs an AI coding agent headless and sorts it: outreach, research, a lookup, a draft.</li>
+            <li>It writes a draft in a fixed place (a follow-up list, a research note) and pings me on Telegram.</li>
+            <li>Nothing is sent on my behalf. I approve, edit or bin each draft.</li>
+          </ol>
+          <h2>What I learned</h2>
+          <p>Capture was never the hard part. Finding things again, and closing the loop, was. That is why the morning <a href="builds.html">Daily Brief</a> came next. And an agent should not grade its own work: every build now has a separate reviewer agent that tries to break it before I see it.</p>
+        </div>
+        <nav class="build-pager" aria-label="More builds">
+          <a href="builds.html">← All builds</a>
+          <a href="build-reel-reads.html">Next: Reel Reads →</a>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <span class="text-muted">&copy; 2026 Arthur Froissart</span>
+      <nav class="cluster" aria-label="Contact">
+        <a href="mailto:arthurmf.amf@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/arthurmf/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
