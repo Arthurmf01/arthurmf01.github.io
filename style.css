@@ -3775,3 +3775,338 @@ a.os-map__node--build:hover {
     justify-content: center;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Home: section intros and the Personal OS diagram (pos.js)
+   -------------------------------------------------------------------------- */
+
+.section-head--split {
+  align-items: flex-start;
+}
+
+.section-head__lede {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 1.05rem;
+  color: var(--color-muted);
+}
+
+@media (min-width: 900px) {
+  .section-head--split {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 3rem;
+  }
+  .section-head--split .section-head__lede { padding-top: 1.4rem; }
+}
+
+.pos-panel {
+  --pos-ink: #234a39;
+  --pos-ink-soft: #e4ebe5;
+  --pos-wire: #a9b9ae;
+  --pos-packet: var(--color-accent);
+  background: #ccd8cf;
+  border-radius: 2rem;
+  padding: clamp(1.4rem, 4vw, 3.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.pos-panel .eyebrow { color: var(--pos-ink); }
+.pos-panel .section-head__title { color: #15271f; }
+.pos-panel .section-head__lede { color: #33463c; }
+
+.pos-panel__side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pos-panel__more {
+  color: var(--pos-ink);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.15rem;
+}
+
+.pos-panel__more:hover { border-bottom-color: transparent; }
+
+.pos-panel__links { gap: 1rem 1.5rem; }
+.pos-panel .btn--secondary { background: #fff; }
+.pos-panel .link-secondary { color: var(--pos-ink); }
+
+.pos {
+  margin: 0;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.pos__frame {
+  border: 1.5px dashed var(--pos-ink);
+  border-radius: 1.1rem;
+  padding: clamp(1rem, 2.4vw, 1.75rem);
+}
+
+.pos__hint {
+  margin: 0 0 1rem;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.pos__stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.6rem;
+}
+
+.pos__col {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pos__node {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  min-height: 3.6rem;
+  padding: 0.6rem 0.75rem 0.6rem 1rem;
+  background: #fff;
+  border: 1.5px solid var(--pos-ink);
+  border-radius: 0.75rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #15271f;
+  text-align: left;
+  cursor: pointer;
+  transition: opacity 0.3s var(--ease-out), background-color 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.pos__node:focus-visible {
+  outline: 3px solid var(--pos-packet);
+  outline-offset: 2px;
+}
+
+.pos__tags {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.pos__tag {
+  background: var(--pos-ink);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1;
+  padding: 0.35rem 0.55rem;
+  border-radius: 0.3rem;
+  white-space: nowrap;
+}
+
+.pos__stage.is-focused .pos__node { opacity: 0.38; }
+.pos__stage.is-focused .pos__node.is-lit { opacity: 1; background: var(--pos-ink-soft); }
+.pos__node[aria-pressed="true"] { box-shadow: inset 0 0 0 1.5px var(--pos-ink); }
+
+.pos__router {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 6.5rem;
+  padding: 0 18% 1.25rem;
+  text-align: center;
+}
+
+.pos__router-shape {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.pos__router-shape path {
+  fill: var(--pos-ink-soft);
+  stroke: var(--pos-ink);
+  stroke-width: 1.5;
+  vector-effect: non-scaling-stroke;
+  transition: fill 0.3s var(--ease-out);
+}
+
+.pos__router.is-lit .pos__router-shape path { fill: #d5e2d8; }
+.pos__router-shape--v { display: none; }
+
+.pos__router-name {
+  position: relative;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--pos-ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1.5px;
+}
+
+.pos__router-sub {
+  position: relative;
+  font-size: 0.72rem;
+  color: #33463c;
+  line-height: 1.3;
+}
+
+.pos__hub-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.pos__hub {
+  width: 11rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--pos-ink);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  transition: box-shadow 0.4s var(--ease-out);
+}
+
+.pos__hub.is-lit { box-shadow: 0 0 0 8px rgba(35, 74, 57, 0.14); }
+
+.pos__hub-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.pos__hub small {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* Phone: stacked, with flowing CSS connectors between the stages */
+.pos__link {
+  align-self: center;
+  width: 2px;
+  height: 1.75rem;
+  background-image: linear-gradient(var(--pos-ink) 50%, transparent 50%);
+  background-size: 2px 8px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pos__link { animation: pos-flow-down 0.9s linear infinite; }
+}
+
+@keyframes pos-flow-down {
+  to { background-position: 0 8px; }
+}
+
+.pos__wires {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.pos__wire {
+  fill: none;
+  stroke: var(--pos-wire);
+  stroke-width: 1.5;
+  transition: stroke 0.3s var(--ease-out), opacity 0.3s var(--ease-out);
+}
+
+.pos__wire--trunk { stroke: var(--pos-ink); stroke-width: 2.5; }
+.pos__wire-tip { fill: var(--pos-wire); transition: fill 0.3s var(--ease-out), opacity 0.3s var(--ease-out); }
+.pos__wire-route path { fill: none; stroke: none; }
+
+.pos__stage.is-focused .pos__wire:not(.pos__wire--trunk),
+.pos__stage.is-focused .pos__wire-tip { opacity: 0.3; }
+.pos__stage.is-focused .pos__wire.is-lit { opacity: 1; stroke: var(--pos-ink); stroke-dasharray: 5 5; }
+.pos__stage.is-focused .pos__wire-tip.is-lit { opacity: 1; fill: var(--pos-ink); }
+
+@media (prefers-reduced-motion: no-preference) {
+  .pos__stage.is-focused .pos__wire.is-lit:not(.pos__wire--trunk) { animation: pos-flow 0.6s linear infinite; }
+}
+
+@keyframes pos-flow {
+  to { stroke-dashoffset: -10; }
+}
+
+.pos__packet {
+  fill: var(--pos-packet);
+  stroke: #fff;
+  stroke-width: 1.5;
+}
+
+.pos__foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  margin-top: 1.25rem;
+  font-size: 0.8rem;
+  color: #33463c;
+}
+
+/* Wide: one row, inputs → router → vault → outputs, wires drawn by pos.js */
+@media (min-width: 900px) {
+  .pos__stage {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(5.5rem, 0.42fr) minmax(8.5rem, 0.52fr) minmax(0, 1.45fr);
+    column-gap: 1.75rem;
+    align-items: center;
+  }
+
+  .pos__link { display: none; }
+  .pos__col--out { margin-left: 1.75rem; }
+  .pos__node { font-size: 0.92rem; padding-left: 0.85rem; }
+
+  .pos__router {
+    align-self: stretch;
+    padding: 0 0.6rem 0 0.4rem;
+  }
+
+  .pos__router-shape--v { display: block; }
+  .pos__router-shape--h { display: none; }
+
+  .pos__router-sub {
+    position: absolute;
+    bottom: -2.2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+  }
+
+  .pos__hub { width: 100%; max-width: 12rem; }
+  .pos__router-name { font-size: 1.3rem; margin-left: -0.6rem; }
+
+  /* Draw the wires in when the diagram first scrolls into view */
+  .js .pos__wire-base { opacity: 0; transition: opacity 0.8s var(--ease-out) 0.2s; }
+  .js .pos__stage.is-live .pos__wire-base { opacity: 1; }
+  .pos__foot { margin-top: 2.75rem; }
+}
+
+@media (max-width: 899px) {
+  .pos__hint { display: none; }
+}
