@@ -3733,3 +3733,45 @@ a.os-map__node--build:hover {
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Call to action (T-0116)
+   -------------------------------------------------------------------------- */
+
+.cta-close {
+  margin-top: 2.5rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--color-border-strong);
+}
+
+.cta-close__more {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.cta-close__more a {
+  color: inherit;
+}
+
+.cta-inline {
+  max-width: var(--prose-width);
+  margin: 2rem 0 1.25rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.cta-inline a {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+@media (max-width: 759px) {
+  .talk-row .talk-row__main {
+    flex-basis: 100%;
+  }
+
+  .cta-row > .btn--primary {
+    flex-basis: 100%;
+    justify-content: center;
+  }
+}

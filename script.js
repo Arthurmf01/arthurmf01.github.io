@@ -964,6 +964,20 @@
     }
   }
 
+  // CTA clicks: reported only when analytics was accepted (gtag exists only then).
+  function initCtaTracking() {
+    document.addEventListener("click", function (event) {
+      var link = event.target.closest ? event.target.closest("[data-cta]") : null;
+      if (!link || typeof window.gtag !== "function") {
+        return;
+      }
+      window.gtag("event", "cta_click", {
+        cta: link.getAttribute("data-cta"),
+        transport_type: "beacon"
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initNavToggle();
     initChannelToggles();
@@ -977,5 +991,6 @@
     initFlipCards();
     initVoices();
     initConsent();
+    initCtaTracking();
   });
 })();
