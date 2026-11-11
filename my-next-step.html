@@ -2,6 +2,10 @@
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
+  <script>
+    /* Visitors who came from a private job page go back to it, never to this generic page. */
+    (function () { try { var r = /^[a-z0-9]+-[a-z]{6}$/, q = new URLSearchParams(location.search).get("for"), s = (q && r.test(q)) ? q : sessionStorage.getItem("jobPage"); if (s && r.test(s)) { sessionStorage.setItem("jobPage", s); location.replace("https://arthur-apply.pages.dev/" + s + "/"); } } catch (e) {} })();
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My next step · Arthur Froissart</title>
   <meta name="description" content="The role Arthur Froissart is after, go-to-market at a frontier AI company, next to what he has done.">

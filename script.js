@@ -978,7 +978,29 @@
     });
   }
 
+  /* Private job pages: a visitor arriving from a tailored page (arthur-apply.pages.dev/<slug>/,
+     linked here with ?for=<slug>) gets "My next step" pointed back at that page for this visit.
+     The slug comes only from the visitor's own URL; nothing private is stored in this repo. */
+  function initJobPageReturn() {
+    var KEY = "jobPage";
+    var SLUG = /^[a-z0-9]+-[a-z]{6}$/;
+    var slug = null;
+    try {
+      var fromUrl = new URLSearchParams(window.location.search).get("for");
+      if (fromUrl && SLUG.test(fromUrl)) { window.sessionStorage.setItem(KEY, fromUrl); }
+      slug = window.sessionStorage.getItem(KEY);
+    } catch (e) { return; }
+    if (!slug || !SLUG.test(slug)) { return; }
+    var target = "https://arthur-apply.pages.dev/" + slug + "/";
+    /* Someone sent a job page never sees the generic "My next step": a direct visit is sent back too. */
+    if (/\/my-next-step\.html$/.test(window.location.pathname)) { window.location.replace(target); return; }
+    document.querySelectorAll('a[href$="my-next-step.html"]').forEach(function (a) {
+      a.setAttribute("href", target);
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    initJobPageReturn();
     initNavToggle();
     initChannelToggles();
     initSubnavSpy();
