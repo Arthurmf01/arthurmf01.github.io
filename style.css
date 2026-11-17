@@ -3457,7 +3457,7 @@ a:hover .preview-card__title .arrow {
 
 @media (min-width: 1000px) {
   .builds-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-  .os-map ~ .builds-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .builds-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 .build-card {
@@ -4110,3 +4110,52 @@ a.os-map__node--build:hover {
 @media (max-width: 899px) {
   .pos__hint { display: none; }
 }
+
+
+.hero__schools { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem 1.1rem; margin: 0.25rem 0 0; font-size: 0.85rem; color: var(--color-muted); }
+.hero__school { display: inline-flex; align-items: center; gap: 0.45rem; font-weight: 600; color: var(--color-text); }
+.hero__school img { height: 1.35rem; width: auto; }
+
+/* v1.4: Wharton beside INSEAD */
+.school__brand + .school__brand { margin-top: 0.75rem; }
+.school__logo--light { background: #fff; border: 1px solid var(--color-border); }
+.school__logo--light img { filter: none; }
+
+
+/* v1.4: real product screenshots in place of the chip demo */
+.shots { position: relative; margin: 0; padding: 1.25rem 1.25rem 2.25rem; }
+.shots__img { display: block; width: 100%; height: auto; border-radius: 0.9rem; border: 1px solid var(--color-border); background: #fff; box-shadow: 0 18px 40px -22px rgba(0,0,0,0.35); }
+.shots__img--back { width: 88%; margin-left: auto; opacity: 0.95; }
+.shots__img--front { width: 92%; margin-top: -22%; position: relative; }
+.shots__cap { position: absolute; left: 1.25rem; bottom: 0.6rem; font-size: 0.75rem; color: var(--color-muted); }
+.shots--wide { padding: 0 0 1.8rem; }
+.shots--wide .shots__img--front { width: 100%; }
+.shots--wide .shots__cap { left: 0; bottom: 0; }
+
+
+/* v1.4 hero: event photos in a rounded card, grey until hovered (same language as the Hobbies gallery) */
+.hero--show { align-items: center; }
+.hero-card { position: relative; margin: 0; width: 100%; aspect-ratio: 4 / 5; border-radius: 1rem; overflow: hidden; background: var(--color-surface); }
+.hero-card__slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: var(--pos); opacity: 0; transition: opacity 1s ease-in-out, filter 0.5s ease, transform 0.9s var(--ease-out); }
+.hero-card__slide.is-on { opacity: 1; }
+@media (hover: hover) {
+  .hero-card__slide { filter: saturate(0.45) sepia(0.12) brightness(1.02); }
+  .hero-card:hover .hero-card__slide { filter: none; transform: scale(1.03); }
+}
+.hero-card__pause { position: absolute; right: 0.75rem; bottom: 0.75rem; padding: 0.25rem 0.6rem; border: none; border-radius: 999px; background: rgba(255, 255, 255, 0.85); color: var(--color-text); font-size: 0.72rem; cursor: pointer; }
+.hero__logos { display: inline-flex; align-items: center; gap: 0.75rem; }
+.hero__logo { display: block; width: auto; }
+.hero__logo--insead { height: 1.35rem; }
+.hero__logo--wharton { height: 1.6rem; }
+.hero__logo-sep { width: 1px; height: 1.4rem; background: var(--color-border-strong, #ccc); }
+.hero__logo-label { font-weight: 600; font-size: 0.95rem; color: var(--color-text); }
+.hero__schools { gap: 0.6rem 1.4rem; margin-top: 0.5rem; }
+@media (max-width: 899px) {
+  .hero--show .hero-card { order: -1; aspect-ratio: 5 / 4; }
+}
+@media (min-width: 900px) {
+  .hero--show { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3.5rem; }
+  .hero--show .hero-card { max-width: 30rem; justify-self: end; }
+}
+@media (prefers-reduced-motion: reduce) { .hero-card__slide { transition: filter 0.5s ease; } }
+.hero--show .hero__schools { margin-bottom: 1.25rem; }

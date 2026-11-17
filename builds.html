@@ -36,11 +36,10 @@
           <li><a class="site-nav__link" href="index.html">Home</a></li>
           <li><a class="site-nav__link" href="career.html">Career</a></li>
           <li><a class="site-nav__link" href="my-next-step.html">My next step</a></li>
-          <li><a class="site-nav__link" href="ai-for-gtm.html">AI for GTM</a></li>
           <li><a class="site-nav__link is-active" href="builds.html" aria-current="page">AI builds</a></li>
           <li><a class="site-nav__link" href="outside.html">Hobbies</a></li>
           <li><a class="site-nav__link" href="faq.html">FAQ</a></li>
-          <li><a class="btn btn--secondary btn--sm site-nav__cta" href="https://calendar.app.google/CfKY5YtipS45RqvT8" target="_blank" rel="noopener" data-cta="book-header">Book a chat</a></li>
+          <li><a class="btn btn--secondary btn--sm site-nav__cta" href="https://calendar.app.google/GeE9MD7jo6RR16AK8" target="_blank" rel="noopener" data-cta="book-header">Book a chat</a></li>
         </ul>
       </nav>
     </div>
@@ -51,55 +50,90 @@
       <div class="container stack stack--lg">
         <div class="prose">
           <span class="eyebrow">AI builds</span>
-          <h1 class="page-title">A small operating system, built with AI agents.</h1>
-          <p class="hero__lede">Everything that reaches me, a voice note, a meeting, an email, a link, lands in one shared memory. Agents read it, draft the next step and wait for my approval. Nothing leaves without a yes.</p>
+          <h1 class="page-title">The agents that run my day.</h1>
+          <p class="hero__lede">Voice notes, meetings, emails, links and job boards all land in one memory. Agents sort them, draft the next step and wait for my approval. I built them to be tested, traced and kept on a budget, the same questions a company asks before it trusts AI with real work.</p>
         </div>
 
-        <figure class="os-map reveal" aria-label="How the system fits together">
-          <div class="os-map__col">
-            <p class="os-map__head">Comes in</p>
-            <span class="os-map__node">Voice note<small>tap and speak on the phone</small></span>
-            <span class="os-map__node">Meetings and classes<small>recorded, then summarised</small></span>
-            <span class="os-map__node">Email and messages<small>replies I owe</small></span>
-            <span class="os-map__node">Links I share<small>articles, videos, papers</small></span>
-          </div>
-          <div class="os-map__arrow" aria-hidden="true">→</div>
-          <div class="os-map__col os-map__col--hub">
-            <p class="os-map__head">One memory</p>
-            <span class="os-map__node os-map__node--hub">Obsidian vault<small>tasks, notes, people, research. Plain text, versioned in git</small></span>
-          </div>
-          <div class="os-map__arrow" aria-hidden="true">→</div>
-          <div class="os-map__col">
-            <p class="os-map__head">Agents</p>
-            <a class="os-map__node os-map__node--build" href="build-ambidex.html">Ambidex agent<small>sorts each capture, drafts outreach and research</small></a>
-            <span class="os-map__node os-map__node--build">Meeting agent<small>hourly: files class notes and commitments</small></span>
-            <span class="os-map__node os-map__node--build">Daily Brief<small>07:00: the three things that matter today</small></span>
-          </div>
-          <div class="os-map__arrow" aria-hidden="true">→</div>
-          <div class="os-map__col">
-            <p class="os-map__head">Comes out</p>
-            <span class="os-map__node">Telegram<small>the morning brief, and approve or edit</small></span>
-            <span class="os-map__node">Drafts<small>messages ready for my yes</small></span>
-            <span class="os-map__node">Research notes<small>filed back into the vault</small></span>
-          </div>
-          <div class="os-map__guard">
-            <p class="os-map__head">Around all of it</p>
-            <ul class="os-map__guard-list">
-              <li><strong>Nothing sends without my yes.</strong> Every outgoing message waits for approval on my phone.</li>
-              <li><strong>A critic reads first.</strong> A separate agent plays the recipient and tries to tear each outreach draft apart.</li>
-              <li><strong>Tested before it changes.</strong> Ten real past captures are replayed and graded after every change to the agent's instructions.</li>
-              <li><strong>Checked every week.</strong> Each scheduled job's last run, its error log and how its secrets are stored.</li>
-            </ul>
-          </div>
-          <figcaption class="os-map__caption">Dark boxes are agents. Each one runs a headless AI coding agent on a schedule.</figcaption>
-        </figure>
+        <div class="pos-panel">
+        <figure class="pos reveal" data-pos>
+            <div class="pos__frame">
+              <p class="pos__hint" aria-hidden="true">Hover an input or an output to follow the data</p>
+              <div class="pos__stage" data-pos-stage>
+                <ul class="pos__col pos__col--in" aria-label="What comes in">
+                  <li><button type="button" class="pos__node" data-pos-node="voice" data-feeds="drafts research brief" aria-pressed="false"><span class="pos__label">Voice notes and photos</span><span class="pos__tags"><span class="pos__tag">Ambidex</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="meetings" data-feeds="notes brief" aria-pressed="false"><span class="pos__label">Meetings and classes</span><span class="pos__tags"><span class="pos__tag">Meeting agent</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="email" data-feeds="drafts brief" aria-pressed="false"><span class="pos__label">Email and messages</span><span class="pos__tags"><span class="pos__tag">Follow-ups</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="links" data-feeds="research" aria-pressed="false"><span class="pos__label">Links and newsletters</span><span class="pos__tags"><span class="pos__tag">Reading agent</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="jobs" data-feeds="career brief" aria-pressed="false"><span class="pos__label">Job boards and AI news</span><span class="pos__tags"><span class="pos__tag">Career radar</span></span></button></li>
+                </ul>
+
+                <span class="pos__link" aria-hidden="true"></span>
+
+                <div class="pos__router" data-pos-router>
+                  <svg class="pos__router-shape pos__router-shape--v" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1L99 36V64L1 99Z"/></svg>
+                  <svg class="pos__router-shape pos__router-shape--h" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path d="M1 1H99L64 99H36Z"/></svg>
+                  <span class="pos__router-name">Router</span>
+                  <span class="pos__router-sub">sorts every input · picks each job's model</span>
+                </div>
+
+                <span class="pos__link" aria-hidden="true"></span>
+
+                <div class="pos__hub-wrap">
+                  <div class="pos__hub" data-pos-hub>
+                    <span class="pos__hub-name">Obsidian vault</span>
+                    <small>one shared memory</small>
+                  </div>
+                </div>
+
+                <span class="pos__link" aria-hidden="true"></span>
+
+                <ul class="pos__col pos__col--out" aria-label="What comes out">
+                  <li><button type="button" class="pos__node" data-pos-node="brief" aria-pressed="false"><span class="pos__label">Morning brief, 07:00</span><span class="pos__tags"><span class="pos__tag">Daily Brief</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="drafts" aria-pressed="false"><span class="pos__label">Drafts waiting for my yes</span><span class="pos__tags"><span class="pos__tag">Follow-ups</span><span class="pos__tag">Critic agent</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="notes" aria-pressed="false"><span class="pos__label">Class and meeting notes</span><span class="pos__tags"><span class="pos__tag">Meeting agent</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="research" aria-pressed="false"><span class="pos__label">Research notes</span><span class="pos__tags"><span class="pos__tag">Ambidex</span></span></button></li>
+                  <li><button type="button" class="pos__node" data-pos-node="career" aria-pressed="false"><span class="pos__label">Career pipeline</span><span class="pos__tags"><span class="pos__tag">Career radar</span></span></button></li>
+                </ul>
+
+                <svg class="pos__wires" data-pos-wires aria-hidden="true"></svg>
+              </div>
+              <div class="pos__foot">
+                <span>26 scheduled jobs · 20+ agent skills · 3 model tiers</span>
+                <span>Health check on every scheduled job, every day</span>
+              </div>
+            </div>
+            <figcaption class="visually-hidden">Five inputs (voice notes, meetings, email, links, job boards) pass through a router into one Obsidian vault. Agents turn it into five outputs: a morning brief, drafts waiting for approval, class and meeting notes, research notes and a career pipeline.</figcaption>
+          </figure>
+
+        <div class="os-map__guard reveal">
+          <p class="os-map__head">Around all of it</p>
+          <ul class="os-map__guard-list">
+            <li><strong>Nothing sends without my yes.</strong> Every outgoing message waits for approval on my phone.</li>
+            <li><strong>A critic reads first.</strong> A separate agent plays the recipient and tries to tear each draft apart.</li>
+            <li><strong>Tested before it changes.</strong> Ten real past captures are replayed and graded after every change to the agent's instructions.</li>
+            <li><strong>Checked every morning.</strong> Each scheduled job's last run, its error log and how its secrets are stored.</li>
+          </ul>
+        </div>
+        </div>
 
         <div class="builds-grid">
           <a class="build-card reveal" href="build-ambidex.html">
             <span class="build-card__cadence">Running daily since August 2026</span>
             <span class="build-card__title">Ambidex</span>
-            <span class="build-card__text">Speak a thought into my phone. It lands as a task, and an agent drafts the follow-up for me to approve.</span>
+            <span class="build-card__text">Speak a thought into my phone. It lands as a task, and an agent files it and drafts the next step for me to approve.</span>
             <span class="build-card__stack">Cloudflare Workers · Whisper · AI coding agents · Telegram</span>
+          </a>
+          <div class="build-card reveal">
+            <span class="build-card__cadence">After every change to an agent</span>
+            <span class="build-card__title">Evals and tracing</span>
+            <span class="build-card__text">Real past cases are replayed in a sandbox and graded by a separate agent, so a change that makes the agent worse is caught before it ships. Every step of a run is traced.</span>
+            <span class="build-card__stack">Python · sandboxed runs · OpenTelemetry · Phoenix</span>
+          </div>
+          <a class="build-card reveal" href="https://github.com/Arthurmf01/claude-skills" target="_blank" rel="noopener">
+            <span class="build-card__cadence">Before any message reaches me</span>
+            <span class="build-card__title">Outreach critic</span>
+            <span class="build-card__text">A second agent plays the person I'm writing to, reads the draft cold and tries to tear it apart. I see the draft only after it survives.</span>
+            <span class="build-card__stack">Sub-agents · adversarial review · Markdown skills</span>
           </a>
           <div class="build-card reveal">
             <span class="build-card__cadence">Every morning at 07:00</span>
@@ -107,8 +141,24 @@
             <span class="build-card__text">A morning page that reads my tasks, inbox and meeting notes and picks the three things that matter today.</span>
             <span class="build-card__stack">TypeScript · Cloudflare Workers · AI coding agents · Telegram</span>
           </div>
+          <div class="build-card reveal">
+            <span class="build-card__cadence">Overnight, while I sleep</span>
+            <span class="build-card__title">Overnight explorer</span>
+            <span class="build-card__text">A strong model sets out many directions on one problem, cheaper agents research each one and critics try to kill them. I wake up to the survivors. Its sibling, a night of reflection over my notes, burned about $100 of tokens on its first run; I rebuilt it with a smaller model, a per-step budget and a hard stop, and it is now capped at $6 a night.</span>
+            <span class="build-card__stack">Multi-agent · model tiers · budget caps · launchd</span>
+          </div>
+          <div class="build-card reveal">
+            <span class="build-card__cadence">Every morning at 07:30</span>
+            <span class="build-card__title">Job health</span>
+            <span class="build-card__text">Checks that every scheduled job ran, logged no new errors and kept its secrets locked down, and flags any change against an approved baseline.</span>
+            <span class="build-card__stack">Python · launchd · 43 tests</span>
+          </div>
+        </div>
+
+        <h2 class="section-head__title reveal">Also built</h2>
+        <div class="builds-grid">
           <a class="build-card reveal" href="build-reel-reads.html">
-            <span class="build-card__cadence">INSEAD Gen AI project · mockup</span>
+            <span class="build-card__cadence">INSEAD Gen AI project</span>
             <span class="build-card__title">Reel Reads</span>
             <span class="build-card__text">A swipe feed where every card is a 20-second idea from a book, and the next card adapts to how you swipe.</span>
             <span class="build-card__stack">HTML · AI video · recommender design</span>
@@ -134,7 +184,7 @@
         </div>
 
         <div class="cluster">
-          <a href="https://calendar.app.google/CfKY5YtipS45RqvT8" class="btn btn--primary" target="_blank" rel="noopener" data-cta="book-builds">Ask me how it works</a>
+          <a href="https://calendar.app.google/GeE9MD7jo6RR16AK8" class="btn btn--primary" target="_blank" rel="noopener" data-cta="book-builds">Ask me how it works</a>
           <a href="https://github.com/Arthurmf01" class="link-secondary" target="_blank" rel="noopener">GitHub <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
@@ -152,5 +202,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="pos.js"></script>
 </body>
 </html>
