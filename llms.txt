@@ -1,0 +1,24 @@
+# Arthur Froissart (Arthur Maroquene Froissart)
+
+> Go-to-market operator and AI builder. Opened 14 African markets for MuleSoft, a Salesforce company, from zero customers to close to $10M in annual recurring revenue (2019 to 2026). INSEAD MBA (2026) with an exchange term at Wharton. Builds AI agents for his own work. Looking to open the next market for a frontier AI company; available from December 2026.
+
+## Key facts
+- Full name: Arthur Maroquene Froissart. Usually goes by Arthur Froissart.
+- Enterprise account executive at MuleSoft (Salesforce), covering Africa from London, 2019 to 2026: customers in 14 countries, close to $10M ARR, Chairman's Club FY25 (top 0.2% of about 25,000 sellers).
+- Education: INSEAD MBA (2026), exchange term at The Wharton School (October to December 2026), master's in computer science at IE Madrid, business degree at HEC Montréal.
+- Before MuleSoft: Monitor Deloitte, L'Oréal.
+- Angel investor in five startups since 2022.
+
+## Pages
+- [Home](https://arthurmf.com/): who Arthur is, in short
+- [Career](https://arthurmf.com/career.html): four chapters, from business school to MuleSoft Africa to INSEAD
+- [My next step](https://arthurmf.com/my-next-step.html): the go-to-market role he wants and the evidence for it
+- [AI builds](https://arthurmf.com/builds.html): the AI agents he built and how they are tested, traced and kept on a budget
+- [Ambidex](https://arthurmf.com/build-ambidex.html): voice-to-task agent system, in daily use since August 2026
+- [Research: Protecting the path into work](https://arthurmf.com/isp.html): independent study with Prof. Alexandra Roulet (INSEAD) on how AI is reshaping entry-level employment, with seven policy proposals ([PDF](https://arthurmf.com/assets/isp/Froissart-2026-Protecting-the-path-into-work.pdf))
+- [FAQ](https://arthurmf.com/faq.html)
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/arthurmf/
+- GitHub: https://github.com/Arthurmf01
+- Book a call: https://calendar.app.google/GeE9MD7jo6RR16AK8
