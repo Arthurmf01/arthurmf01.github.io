@@ -4159,3 +4159,20 @@ a.os-map__node--build:hover {
 }
 @media (prefers-reduced-motion: reduce) { .hero-card__slide { transition: filter 0.5s ease; } }
 .hero--show .hero__schools { margin-bottom: 1.25rem; }
+
+/* v1.4.1: latest-research teaser at the end of the landing page */
+.research-teaser { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.5rem; padding: clamp(1.4rem, 4vw, 2.5rem); border-radius: 2rem; background: var(--tint-blue, #eef2f6); color: var(--color-text); text-decoration: none; transition: transform 0.4s var(--ease-out), box-shadow 0.4s ease; }
+.research-teaser:hover { transform: translateY(-2px); box-shadow: 0 18px 40px -26px rgba(0, 0, 0, 0.35); }
+.research-teaser__copy { display: flex; flex-direction: column; gap: 0.6rem; }
+.research-teaser__title { font-family: var(--font-display); font-size: clamp(1.7rem, 1.3rem + 1.6vw, 2.4rem); line-height: 1.1; letter-spacing: -0.02em; }
+.research-teaser__text { color: var(--color-muted); max-width: 40rem; }
+.research-teaser__cta { margin-top: 0.4rem; font-weight: 600; }
+.research-teaser:hover .research-teaser__cta .arrow { transform: translateX(3px); }
+.research-teaser__stat { display: flex; flex-direction: column; gap: 0.35rem; align-self: center; padding: 1.25rem 1.4rem; border-radius: 1.25rem; background: rgba(255, 255, 255, 0.7); }
+.research-teaser__num { font-family: var(--font-display); font-size: 3rem; line-height: 1; color: var(--color-accent); }
+.research-teaser__label { font-size: 0.9rem; }
+.research-teaser__src { font-size: 0.75rem; color: var(--color-muted); }
+@media (min-width: 900px) { .research-teaser { grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 3rem; align-items: center; } }
+
+/* v1.4.1: use more of large screens */
+@media (min-width: 1500px) { :root { --container-width: 1280px; } }
